@@ -1,0 +1,250 @@
+@charset utf-8;
+
+/*
+==========================
+RESET
+==========================
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figure,figcaption,hgroup,menu,header,footer,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0}article,aside,canvas,figure,figure img,figcaption,hgroup,footer,header,nav,section,audio,video{display:block}a img{border:0}figure{position:relative}figure img{width:100%}
+
+/*
+==========================
+Font Loading
+==========================
+*/
+
+@font-face {
+    font-family: 'ArialBlackRegular';
+    src: url('fonts/arial_black-webfont.eot');
+    src: url('fonts/arial_black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/arial_black-webfont.woff') format('woff'),
+         url('fonts/arial_black-webfont.ttf') format('truetype'),
+         url('fonts/arial_black-webfont.svg#') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*
+==========================
+GENERAL STYLES
+==========================
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'ArialBlackRegular', Gadget, sans-serif;
+	font-weight: normal;
+	color:#bfc1cb;
+}
+
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+	margin: 24px 12px 12px;
+}
+
+a:link {
+	color: #bfc1cb;
+	text-decoration:none;
+}
+a:visited {
+	color: #bfc1cb;
+}
+a:hover,a:active {
+	color: #191c2b;
+}
+
+p {
+	font-size: 20px;
+	text-align:center;
+	color:#fff;
+	margin-top: 200px;
+}
+
+
+/*
+==========================
+LAYOUT STYLES
+==========================
+*/
+
+#if-logged-in .container {
+	background: #FFF;
+	margin-top: -24px;
+}
+
+* {
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: 'ArialBlackRegular', Gadget, sans-serif;
+	background: #000312;
+	color: #fff;
+	padding: 0;
+}
+
+#main {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -128px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.container {
+	color:#000;
+	padding:0;
+	width:100%;
+
+}
+	#header .container {
+		padding-top: 80px;
+		padding-bottom: 40px;
+	}
+			#logo,
+			#tagline {
+			}
+			#logo {
+				font-size: 63px;
+				letter-spacing: -5px;
+				display: block;
+				height: 70px;
+				overflow: hidden;
+				margin-bottom: 18px;
+			}
+			#tagline {
+				display:none;
+			}
+			#header-image.container {
+				padding: 0;
+			}
+	#nav-primary {
+		clear: both;
+		width: 100%;
+		padding: 0 10px;
+	}
+		#nav-primary ul,
+		#nav-primary li {
+			list-style: none;
+		}
+			#nav-primary a {
+				float: left;
+				display: block;
+				padding: 0 10px;
+			}
+	#widget-header {
+		clear: both;
+	}
+	
+	#content {
+		max-width:1140px;
+		margin:0 auto;
+		padding:15px;
+	}
+
+	#footer, .push {
+		height: 128px; /* .push must be the same height as .footer */
+	}
+	#footer .container {
+	}
+		#footer-content {
+
+			max-width:1140px;
+			margin:0 auto;
+			padding: 0 15px;
+		}
+			#footer ul,
+			#footer li {
+				display: block;
+				list-style: none;
+				float:left;
+				margin-right:3px;
+			}
+				#footer li a {
+					font-size:51px;
+					padding: 0;
+					letter-spacing: -4px;
+				}
+
+				#footer li a:hover,#footer li a:active {
+					-webkit-transition: color 0.2s ease-out; 
+					-moz-transition: color 0.2s ease-out;
+					transition: color 0.2s ease-out;
+					-webkit-perspective: 1000;
+					-webkit-backface-visibility: hidden;
+					color: #191c2b;
+				}
+
+				#footer li.current-menu-item a { color:#191c2b;}
+
+				#nav-footer {
+					margin-top: -35px;
+				}
+
+/*************************
+Vimeo Player
+*************************/
+
+.a .av {
+	background: rgba(23, 35, 34, 0.75);
+	-webkit-border-radius: 0 !important;
+	-moz-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+
+/*************************
+Media Queries
+*************************/
+
+@media (max-width: 1147px) {
+
+	#logo a, #footer li a {
+		font-size: 51px;
+		letter-spacing: -4px;
+	}
+}
+
+@media (max-width: 910px) {
+
+	#logo a, #footer li a {
+		font-size:39px;
+		letter-spacing: -3px;
+		/*line-height: 35px;*/
+	}
+
+	#logo {
+		/*line-height: 30px;*/
+	}
+}
+
+@media (max-width: 700px) {
+
+	#logo a, #footer li a {
+		font-size: 34px;
+		/*line-height: 28px;*/
+		letter-spacing: -2px;
+	}
+
+	#logo {
+		/*line-height: 30px;*/
+	}
+}	
+
+
+
+
+
+
