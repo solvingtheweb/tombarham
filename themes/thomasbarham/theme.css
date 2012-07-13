@@ -212,34 +212,51 @@ Media Queries
 @media (max-width: 1147px) {
 
 	#logo a, #footer li a {
-		font-size: 51px;
-		letter-spacing: -4px;
+		font-size: 40px;
+		letter-spacing: -3px;
+	}
+
+	#logo {
+		margin-bottom:22px;
 	}
 }
 
-@media (max-width: 910px) {
+@media (max-width: 926px) {
 
 	#logo a, #footer li a {
-		font-size:39px;
-		letter-spacing: -3px;
+		font-size:30px;
+		letter-spacing: -2px;
 		/*line-height: 35px;*/
 	}
 
 	#logo {
-		/*line-height: 30px;*/
+		margin-bottom:25px;
 	}
 }
 
 @media (max-width: 700px) {
 
+	#main {
+		margin: 0 auto -275px; /* the bottom margin is the negative value of the footer's height */
+	}
+
+	#footer, .push {
+		height: 275px; /* .push must be the same height as .footer */
+	}
+
+	#footer li {
+		float: none;
+		margin: 0 0 -16px;
+	}
+
 	#logo a, #footer li a {
-		font-size: 34px;
+		font-size: 38px;
 		/*line-height: 28px;*/
 		letter-spacing: -2px;
 	}
 
 	#logo {
-		/*line-height: 30px;*/
+		margin-bottom:28px;
 	}
 }	
 

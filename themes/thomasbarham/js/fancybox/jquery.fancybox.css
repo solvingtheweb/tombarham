@@ -88,10 +88,10 @@
 
 .fancybox-close {
 	position: absolute;
-	bottom: -34px;
-	right: 6px;
-	width: 36px;
-	height: 36px;
+	bottom: -24px;
+	right: 20px;
+	width: 24px;
+	height: 24px;
 	cursor: pointer;
 	z-index: 1004;
 }
@@ -164,7 +164,7 @@
 
 .fancybox-title {
 	visibility: hidden;	
-	font: normal 14px/20px Verdana,Helvetica,Arial,sans-serif;
+	font: normal 15px/20px Helvetica,Arial,sans-serif;
 	font-weight:bold;
 	position: relative;
 	text-shadow: none;
@@ -178,7 +178,7 @@
 .fancybox-title-float-wrap {
 	position: absolute;
 	bottom: 0;
-	margin-bottom: -28px;
+	margin: 0 0 -28px 10px;
 	z-index: 1003;
 	text-align: center;
 }
@@ -192,7 +192,7 @@
 	   -moz-border-radius: 15px;
 			border-radius: 15px;
 	text-shadow: 0 1px 2px #222;
-	color: #FFF;
+	color: #bfc0c4;
 	font-weight: bold;
 	line-height: 24px;
 	white-space: nowrap;
