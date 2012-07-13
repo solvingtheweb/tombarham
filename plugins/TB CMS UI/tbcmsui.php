@@ -276,7 +276,7 @@ function pods_ui_conceptmenu()
 {
 	$icon = WP_PLUGIN_URL. '/TB CMS UI/wp_icon_home.png';
 	add_object_page('Concept', 'Concept', 'read', 'conceptmenu', '', $icon);
-	add_submenu_page('conceptmenu', ' Images', 'Images', 'read', 'conceptmenu', 'conceptimages');
+	add_submenu_page('conceptmenu', ' Concepts', 'Concepts', 'read', 'conceptmenu', 'conceptimages');
 	add_submenu_page('conceptmenu', ' Reorder', 'Reorder', 'read', 'reorderconcept', 'reorderconcept');
 }
 
@@ -287,6 +287,15 @@ function conceptimages()
                     'name',
                     'slug',
 					'image',
+					'image2',
+					'image3',
+					'image4',
+					'image5',
+					'image6',
+					'image7',
+					'image8',
+					'image9',
+					'image10',
 					 );
   $object->ui = array(
                     'title'   => 'Concept',

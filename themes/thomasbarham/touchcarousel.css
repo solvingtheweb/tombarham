@@ -224,6 +224,7 @@
 *
 ********/
 
+
 /**
 * Carousel with image and text, custom skinned scrollbar
 **/
@@ -275,6 +276,64 @@
 	color: #1873c9;		
 }
 #carousel-image-and-text .item-block p {			
+	font: normal 13px/20px Helvetica, Arial, sans-serif;
+	color: #555;		
+	width: 100px;
+	padding: 0;
+	text-align:center;
+}
+
+
+/* SUB CAROUSEL */
+
+#subcarousel {
+	width: 100%;
+	height: 279px;
+	margin: 0 auto;	
+}	
+#subcarousel .arrow-holder {
+	height: 110px;
+}		
+#subcarousel .touchcarousel-item {	
+	height: 200px;		
+}
+#subcarousel .item-block {
+	width: 100px;
+	height: 67px;
+	display: block;
+}
+#subcarousel .item-block img,
+#subcarousel .item-block h4, 
+#subcarousel .item-block p {
+	float: left;
+	position: relative;
+	display: block;
+	margin: 0;			
+}
+#subcarousel .item-block img {
+	max-width: 100px;		
+	border: 0;
+	padding: 0;		
+}
+#subcarousel .item-block {			
+	text-decoration: none;
+	color: inherit;			
+}					
+#subcarousel .item-block h4 {
+	font: bold 13px/20px Helvetica, Arial, sans-serif;
+	color: #BFC1CB;
+	width: 100px;
+	height: auto;		
+	padding: 2px 0 0 0px;
+	text-align:center;
+	-webkit-transition: color 0.2s ease-out; 
+	-moz-transition: color 0.2s ease-out;
+	transition: color 0.2s ease-out;  	
+}
+#subcarousel .item-block:hover h4 {	
+	color: #1873c9;		
+}
+#subcarousel .item-block p {			
 	font: normal 13px/20px Helvetica, Arial, sans-serif;
 	color: #555;		
 	width: 100px;
