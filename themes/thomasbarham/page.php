@@ -214,7 +214,7 @@ jQuery(function($) {
 
 jQuery(document).ready(function(){
 	jQuery('#ajax').hide();
-	jQuery('#concepts_container a').live('click', function(e){  
+	jQuery('#concepts_container #carousel-image-and-text a').live('click', function(e){  
   		e.preventDefault();  
   		var link = jQuery(this).attr('href');
 		jQuery('#ajax').load(link+ ' #ajax', function(){
