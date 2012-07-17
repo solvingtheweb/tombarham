@@ -59,7 +59,7 @@
 			          	$totalslides = $corporate->getTotalRows();
 					?>
 					<?php if( $totalslides>0 ) : ?>
-						<div id="carousel-image-and-text" class="touchcarousel minimal-light">
+						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
 							<ul class="touchcarousel-container">
 								<?php while ( $corporate->fetchRecord() ) : ?>
 									<?php
@@ -103,7 +103,7 @@
 			          	$totalslides = $titles->getTotalRows();
 					?>
 					<?php if( $totalslides>0 ) : ?>
-						<div id="carousel-image-and-text" class="touchcarousel minimal-light">
+						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
 							<ul class="touchcarousel-container">
 								<?php while ( $titles->fetchRecord() ) : ?>
 									<?php
@@ -148,12 +148,13 @@
 					?>
 					<?php if( $totalslides>0 ) : ?>
 						<div id="concepts_container">
-						<div id="carousel-image-and-text" class="touchcarousel minimal-light">
+						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
 							<ul class="touchcarousel-container">
 								<?php while ( $concept->fetchRecord() ) : ?>
 									<?php
 						              // set our variables
 							      		$concept_id         = $concept->get_field('id');
+										$concept_slug       = $concept->get_field('slug');
 						            	$concept_name       = $concept->get_field('name');
 						            	$concept_image      = $concept->get_field('image');
 
@@ -163,7 +164,7 @@
 
 								<?php if( !empty( $concept_image ) ) : ?>
 									<li class="touchcarousel-item">
-										<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image; ?>">
+										<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_slug; ?>">
 									    	<img src="<?php echo $concept_image; ?>"/>
 									    	<!--<h4><?php echo $title_name; ?></h4>-->    
 										</a>
@@ -175,150 +176,11 @@
 						</div>
 						</div>
 						
-						<div id="ajax">
-						
-							<?php
-								global $pods;
-								$concept = new Pod('concept'); 
-								$concept->findRecords('t.conceptdisplayorder ASC', -1, 't.id=1'); 
-								$totalslides = $concept->getTotalRows();	
-							?>
-								<?php if( $totalslides>0 ) : ?>
-									<div id="concepts_container">
-									<div id="subcarousel" class="touchcarousel minimal-light">
-										<ul class="touchcarousel-container" style="width: 627px;">
-											<?php while ( $concept->fetchRecord() ) : ?>
-												<?php
-									              // set our variables
-										      		$concept_id         = $concept->get_field('id');
-									            	$concept_name       = $concept->get_field('name');
-									            	$concept_image      = $concept->get_field('image');
-													$concept_image2     = $concept->get_field('image2');
-													$concept_image3     = $concept->get_field('image3');
-													$concept_image4     = $concept->get_field('image4');
-													$concept_image5     = $concept->get_field('image5');
-													$concept_image6     = $concept->get_field('image6');
-													$concept_image7     = $concept->get_field('image7');
-													$concept_image8     = $concept->get_field('image8');
-													$concept_image9     = $concept->get_field('image9');
-													$concept_image10    = $concept->get_field('image10');
-                                
-									            	// data cleanup
-									            	$concept_image      = $concept_image[0]['guid'];
-													$concept_image2     = $concept_image2[0]['guid'];
-													$concept_image3     = $concept_image3[0]['guid'];
-													$concept_image4     = $concept_image4[0]['guid'];
-													$concept_image5     = $concept_image5[0]['guid'];
-													$concept_image6     = $concept_image6[0]['guid'];
-													$concept_image7     = $concept_image7[0]['guid'];
-													$concept_image8     = $concept_image8[0]['guid'];
-													$concept_image9     = $concept_image9[0]['guid'];
-													$concept_image10    = $concept_image10[0]['guid'];
-													
-									            ?>
-                                
-											<?php if( !empty( $concept_image ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image; ?>">
-												    	<img src="<?php echo $concept_image; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image2 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image2; ?>">
-												    	<img src="<?php echo $concept_image2; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image3 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image3; ?>">
-												    	<img src="<?php echo $concept_image3; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image4 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image4; ?>">
-												    	<img src="<?php echo $concept_image4; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image5 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image5; ?>">
-												    	<img src="<?php echo $concept_image5; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image6 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image6; ?>">
-												    	<img src="<?php echo $concept_image6; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image7 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image7; ?>">
-												    	<img src="<?php echo $concept_image7; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image8 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image8; ?>">
-												    	<img src="<?php echo $concept_image8; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image9 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image9; ?>">
-												    	<img src="<?php echo $concept_image9; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php if( !empty( $concept_image10 ) ) : ?>
-												<li class="touchcarousel-item">
-													<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image10; ?>">
-												    	<img src="<?php echo $concept_image10; ?>"/>
-                                
-													</a>
-												</li>
-												
-											<?php endif ?>
-											<?php endwhile; ?>
-                                
-										</ul> 
-									</div>
-									</div>
-								<?php endif; ?>
-							
-						</div>
-						
+						<div id="ajax"></div>
 					<?php endif; ?>
+		
 					<?php }?>
-					</div>
+					
 					
 					
 					
@@ -337,39 +199,47 @@
 <div class="push"></div>
 
 <script type="text/javascript">
+
+jQuery(function($) {
+		$("#carousel-image-and-text").touchCarousel({					
+			pagingNav: false,
+			snapToItems: true,
+			itemsPerMove: 3,
+			transitionSpeed: 500,				
+			scrollToLast: false,
+			loopItems: false,
+			scrollbar: false,
+	    });
+});
+
 jQuery(document).ready(function(){
 	jQuery('#ajax').hide();
 	jQuery('#concepts_container a').live('click', function(e){  
   		e.preventDefault();  
   		var link = jQuery(this).attr('href');
-  		jQuery('#ajax').show();  
-
+		jQuery('#ajax').load(link+ ' #ajax', function(){
+			$("#subcarousel").touchCarousel({					
+				pagingNav: false,
+				snapToItems: true,
+				itemsPerMove: 3,
+				transitionSpeed: 500,				
+				scrollToLast: false,
+				loopItems: false,
+				scrollbar: false,
+		    });
+		});
+  		jQuery('#ajax').show();
+  		jQuery('.touchcarousel-container').css("width", "1140px");
+		
   	}); 
 
-  });
+});
 
-jQuery(function($) {
 
-		$("#carousel-image-and-text").touchCarousel({					
-			pagingNav: false,
-			snapToItems: true,
-			itemsPerMove: 1,
-			transitionSpeed: 500,				
-			scrollToLast: false,
-			loopItems: true,
-			scrollbar: false,
-	    });
-		$("#subcarousel").touchCarousel({					
-			pagingNav: false,
-			snapToItems: true,
-			itemsPerMove: 1,
-			transitionSpeed: 500,				
-			scrollToLast: false,
-			loopItems: true,
-			scrollbar: false,
-	    });
-	});
+
+
 	
+		
         $(document).ready(function() {
             $('.fancybox').fancybox({
                 
