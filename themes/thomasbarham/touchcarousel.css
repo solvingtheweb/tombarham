@@ -230,11 +230,11 @@
 **/
 #carousel-image-and-text {
 	width: 100%;
-	height: 279px;
+	height: 80px;
 	margin: 0 auto;	
 }	
 #carousel-image-and-text .arrow-holder {
-	height: 110px;
+	height: 62px;
 }		
 #carousel-image-and-text .touchcarousel-item {	
 	height: 200px;		
