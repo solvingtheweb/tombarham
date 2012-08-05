@@ -83,7 +83,7 @@
 								<?php endif ?>
 								<?php if( !empty( $corporate_vimeolink ) ) : ?>
 									<li class="touchcarousel-item">
-										<a class="item-block iframe" title="<?php echo $corporate_name; ?>" href="http://player.vimeo.com/video/<?php echo $title_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
+										<a class="item-block iframe" title="<?php echo $corporate_name; ?>" href="http://player.vimeo.com/video/<?php echo $corporate_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
 								    		<img src="<?php echo getVimeoInfo($corporate_vimeolink) ?>"/>
 								    		<!--<h4><?php echo $corporate_name; ?></h4>-->   
 									
