@@ -26,6 +26,17 @@ get_header(); ?>
 					$concept_image8     = $concept->get_field('image8');
 					$concept_image9     = $concept->get_field('image9');
 					$concept_image10    = $concept->get_field('image10');
+	            	$concept_caption    = $concept->get_field('caption');
+					$concept_caption2   = $concept->get_field('caption2');
+					$concept_caption3   = $concept->get_field('caption3');
+					$concept_caption4   = $concept->get_field('caption4');
+					$concept_caption5   = $concept->get_field('caption5');
+					$concept_caption6   = $concept->get_field('caption6');
+					$concept_caption7   = $concept->get_field('caption7');
+					$concept_caption8   = $concept->get_field('caption8');
+					$concept_caption9   = $concept->get_field('caption9');
+					$concept_caption10  = $concept->get_field('caption10');
+					
 
 	            	// data cleanup
 	            	$concept_image      = $concept_image[0]['guid'];
@@ -48,7 +59,7 @@ get_header(); ?>
             
 						<?php if( !empty( $concept_image ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption; ?>" href="<?php echo $concept_image; ?>">
 							    	<img src="<?php echo $concept_image; ?>"/>
             
 								</a>
@@ -57,7 +68,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image2 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image2; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption2; ?>" href="<?php echo $concept_image2; ?>">
 							    	<img src="<?php echo $concept_image2; ?>"/>
             
 								</a>
@@ -66,7 +77,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image3 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image3; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption3; ?>" href="<?php echo $concept_image3; ?>">
 							    	<img src="<?php echo $concept_image3; ?>"/>
             
 								</a>
@@ -75,7 +86,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image4 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image4; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption4; ?>" href="<?php echo $concept_image4; ?>">
 							    	<img src="<?php echo $concept_image4; ?>"/>
             
 								</a>
@@ -84,7 +95,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image5 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image5; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption5; ?>" href="<?php echo $concept_image5; ?>">
 							    	<img src="<?php echo $concept_image5; ?>"/>
             
 								</a>
@@ -93,7 +104,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image6 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image6; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption6; ?>" href="<?php echo $concept_image6; ?>">
 							    	<img src="<?php echo $concept_image6; ?>"/>
             
 								</a>
@@ -102,7 +113,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image7 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image7; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption7; ?>" href="<?php echo $concept_image7; ?>">
 							    	<img src="<?php echo $concept_image7; ?>"/>
             
 								</a>
@@ -111,7 +122,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image8 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image8; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption8; ?>" href="<?php echo $concept_image8; ?>">
 							    	<img src="<?php echo $concept_image8; ?>"/>
             
 								</a>
@@ -120,7 +131,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image9 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image9; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption9; ?>" href="<?php echo $concept_image9; ?>">
 							    	<img src="<?php echo $concept_image9; ?>"/>
             
 								</a>
@@ -129,7 +140,7 @@ get_header(); ?>
 						<?php endif ?>
 						<?php if( !empty( $concept_image10 ) ) : ?>
 							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_name; ?>" href="<?php echo $concept_image10; ?>">
+								<a class="item-block fancybox" title="<?php echo $concept_caption10; ?>" href="<?php echo $concept_image10; ?>">
 							    	<img src="<?php echo $concept_image10; ?>"/>
             
 								</a>
