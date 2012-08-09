@@ -116,6 +116,10 @@
     margin-right: 8px;
 }
 
+.pods_admin .dropme, .pods_form .dropme {
+    cursor: pointer;
+}
+
 .pods_admin #column_list {
     padding-top: 10px;
 }
@@ -212,6 +216,14 @@
     border: 1px solid #E3E3E3;
 }
 
+.plupload-container .button {
+    margin-bottom: 10px;
+}
+
+.plupload-container .start {
+    margin-top: 10px;
+}
+
 .pods_admin .area textarea,
 .pods_admin .desc,
 .pods_admin .code,
@@ -256,6 +268,8 @@
 
 .pods_form {
     margin-top: 10px;
+    overflow: hidden;
+    width: 100%;
 }
 
 .pods_admin #filterForm {
@@ -570,4 +584,12 @@
 .pods_form .date_selector td a:hover {
     background: #003C78;
     color: #fff;
+}
+
+.pods_form:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
 }

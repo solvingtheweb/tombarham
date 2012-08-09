@@ -122,15 +122,15 @@ class PodInit
         wp_register_script('pods-ui', PODS_URL . '/ui/js/pods.ui.js', array('jquery', 'jqmodal'));
 
         $additional_settings = array('pods_disable_file_browser' => 0,
-                                     'pods_files_require_login' => 0,
+                                     'pods_files_require_login' => 1,
                                      'pods_files_require_login_cap' => '',
                                      'pods_disable_file_upload' => 0,
-                                     'pods_upload_require_login' => 0,
+                                     'pods_upload_require_login' => 1,
                                      'pods_upload_require_login_cap' => '',
                                      'pods_page_precode_timing' => 0);
         foreach ($additional_settings as $additional_setting => $setting) {
-            $setting = get_option($additional_setting);
-            if (!empty($setting))
+            $setting = get_option($additional_setting, false);
+            if ( false !== $setting )
                 $additional_settings[$additional_setting] = $setting;
         }
         foreach ($additional_settings as $additional_setting => $setting) {
@@ -138,11 +138,11 @@ class PodInit
                 $setting = false;
             elseif (1 == $setting)
                 $setting = true;
-            if (in_array($additional_setting, array('pods_files_require_login', 'pods_upload_require_login'))) {
-                if (0 < strlen($additional_settings[$additional_setting.'_cap']))
+            if ( in_array($additional_setting, array('pods_files_require_login', 'pods_upload_require_login') ) ) {
+                if ( 0 < strlen($additional_settings[$additional_setting.'_cap'] ) )
                     $setting = $additional_settings[$additional_setting.'_cap'];
             }
-            elseif (in_array($additional_setting, array('pods_files_require_login_cap', 'pods_upload_require_login_cap')))
+            elseif ( in_array($additional_setting, array('pods_files_require_login_cap', 'pods_upload_require_login_cap') ) )
                 continue;
             if (!defined(strtoupper($additional_setting)))
                 define(strtoupper($additional_setting), $setting);
@@ -277,6 +277,8 @@ class PodInit
         }
         else {
             $home_path = parse_url(home_url());
+            if ( !isset( $home_path[ 'path' ] ) )
+                $home_path[ 'path' ] = '/';
             $uri = preg_replace('|^' . preg_quote($home_path['path'], '|') . '|', '', $_SERVER['REQUEST_URI']);
             $uri = explode('?', $uri);
             $uri = preg_replace("@^([/]?)(.*?)([/]?)$@", "$2", $uri[0]);

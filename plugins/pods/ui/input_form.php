@@ -70,14 +70,20 @@ function saveForm(form_count) {
         var classname = jQuery(this).attr("class").split(" ");
         if ("pick" == classname[1]) {
             jQuery("." + classname[2] + " .active").each(function() {
-                theval += jQuery(this).data("value") + ",";
+                if ( 0 < parseInt( jQuery( this ).data( 'value' ) ) )
+                    theval += jQuery( this ).data( 'value' ) + ",";
+                else if ( 0 < parseInt( jQuery( this ).attr( 'value' ) ) )
+                    theval += jQuery( this ).attr( 'value' ) + ",";
             });
             theval = theval.slice(0, -1);
         }
         else if ("file" == classname[1]) {
-            jQuery("." + classname[2] + " > div.success").each(function() {
-                theval += jQuery(this).attr("id") + ",";
-            });
+            jQuery( "." + classname[2] + " > div.success" ).each( function () {
+                if ( 0 < parseInt( jQuery( this ).attr( 'id' ) ) )
+                    theval += jQuery( this ).attr( 'id' ) + ",";
+                else if ( 0 < parseInt( jQuery( this ).data( 'post-id' ) ) )
+                    theval += jQuery( this ).data( 'post-id' ) + ",";
+            } );
             theval = theval.slice(0, -1);
         }
         else if ("bool" == classname[1]) {

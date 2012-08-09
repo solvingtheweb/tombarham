@@ -8,14 +8,7 @@ Author: Solve Design LLC
 Author URI: http://www.solvingtheweb.com
 */
 
-function mytheme_enqueue_admin_style() {
 
-     $admin_handle = 'mytheme_admin_stylesheet';
-     $admin_stylesheet = get_template_directory_uri() . '/podsui.css';
-
-     wp_enqueue_style( $admin_handle, $admin_stylesheet );
-}
-add_action('admin_print_styles', 'mytheme_enqueue_admin_style', 11 );
 
 
 function pods_ui_commercialsmenu()

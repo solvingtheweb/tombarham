@@ -3,16 +3,17 @@
 Plugin Name: Pods CMS Framework
 Plugin URI: http://podsframework.org/
 Description: Pods is a CMS framework for creating, managing, and deploying customized content types.
-Version: 1.12.3
+Version: 1.14.2
 Author: The Pods CMS Team
 Author URI: http://podsframework.org/about/
+License: GPLv2 or later
+*/
 
-(c) Copyright 2009-2012  The Pods CMS Team  (email : contact@podsframework.org)
-
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation; either version 2 of the License, or
-(at your option) any later version.
+/*
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -21,10 +22,10 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-define('PODS_VERSION', '1.12.3');
+define('PODS_VERSION', '1.14.2');
 if (!defined('PODS_WP_VERSION_MINIMUM'))
     define('PODS_WP_VERSION_MINIMUM', '3.1');
 if (!defined('PODS_PHP_VERSION_MINIMUM'))
