@@ -13,7 +13,7 @@ Author URI: http://www.solvingtheweb.com
 
 function pods_ui_commercialsmenu()
 {
-	$icon = WP_PLUGIN_URL. '/TB CMS UI/wp_icon_home.png';
+	$icon = WP_PLUGIN_URL. '/TB CMS UI/gear.png';
 	add_object_page('Commercials', 'Commercials', 'read', 'commercialsmenu', '', $icon);
 	add_submenu_page('commercialsmenu', ' Videos', 'Videos', 'read', 'commercialsmenu', 'commercialvideos');
 	add_submenu_page('commercialsmenu', ' Images', 'Images', 'read', 'commercialimages', 'commercialimages');
@@ -98,7 +98,7 @@ add_action('admin_menu','pods_ui_commercialsmenu');
 
 function pods_ui_corporatemenu()
 {
-  $icon = WP_PLUGIN_URL. '/TB CMS UI/wp_icon_home.png';
+  $icon = WP_PLUGIN_URL. '/TB CMS UI/gear.png';
   add_object_page('Corporate', 'Corporate', 'read', 'corporatemenu', '', $icon);
   add_submenu_page('corporatemenu', ' Videos', 'Videos', 'read', 'corporatemenu', 'corporatevideos');
   add_submenu_page('corporatemenu', ' Images', 'Images', 'read', 'corporateimages', 'corporateimages');
@@ -184,7 +184,7 @@ add_action('admin_menu','pods_ui_corporatemenu');
 
 function pods_ui_titlesmenu()
 {
-	$icon = WP_PLUGIN_URL. '/TB CMS UI/wp_icon_home.png';
+	$icon = WP_PLUGIN_URL. '/TB CMS UI/gear.png';
 	add_object_page('Titles', 'Titles', 'read', 'titlesmenu', '', $icon);
 	add_submenu_page('titlesmenu', ' Videos', 'Videos', 'read', 'titlesmenu', 'titlesvideos');
 	add_submenu_page('titlesmenu', ' Images', 'Images', 'read', 'titlesimages', 'titlesimages');
@@ -267,9 +267,9 @@ add_action('admin_menu','pods_ui_titlesmenu');
 
 function pods_ui_conceptmenu()
 {
-	$icon = WP_PLUGIN_URL. '/TB CMS UI/wp_icon_home.png';
-	add_object_page('Concept', 'Concept', 'read', 'conceptmenu', '', $icon);
-	add_submenu_page('conceptmenu', ' Concepts', 'Concepts', 'read', 'conceptmenu', 'conceptimages');
+	$icon = WP_PLUGIN_URL. '/TB CMS UI/gear.png';
+	add_object_page('Concept Galleries', 'Concept Galleries', 'read', 'conceptmenu', '', $icon);
+	add_submenu_page('conceptmenu', ' Concept Galleries', 'Concept Galleries', 'read', 'conceptmenu', 'conceptimages');
 	add_submenu_page('conceptmenu', ' Reorder', 'Reorder', 'read', 'reorderconcept', 'reorderconcept');
 }
 
@@ -301,7 +301,7 @@ function conceptimages()
 					'caption10',
 					 );
   $object->ui = array(
-                    'title'   => 'Concept',
+                    'title'   => 'Concept Galleries',
                     'columns' => array(
                               'name'      => 'Name',
 							  'created'	  => 'Date Created',
@@ -321,7 +321,7 @@ function reorderconcept()
                     'name'
 					 );
   $object->ui = array(
-                    'title'   => 'Concept',
+                    'title'   => 'Concept Galleries',
 					'reorder' => 'conceptdisplayorder',
 					'reorder_columns' => array(
 					          'name'      => 'Name',
