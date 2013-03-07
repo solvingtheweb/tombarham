@@ -27,7 +27,7 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/touchcarousel.css" />
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/touchcarousel/black-and-white-skin/black-and-white-skin.css" />
 	<script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.7.1.js"></script>	
-	<script src="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/jquery.touchcarousel-1.0.min.js"></script>
+	<script src="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/jquery.touchcarousel-1.2.min.js"></script>
 	
 	<!-- Fancybox -->
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
@@ -42,5 +42,14 @@
 <body <?php body_class(); ?>>
 
 <div id="main"><!-- this encompasses the entire Web site -->
+
+	<div id="header">
+		<div class="container">
+			<?php if ( ! dynamic_sidebar( 'Main' ) ) : ?><!--Wigitized Footer--><?php endif ?>
+			<div id="nav-primary" class="nav"><nav>
+				<?php wp_nav_menu( array('theme_location' => 'header-menu' )); /* editable within the Wordpress backend */ ?>
+			</nav></div><!--#nav-primary-->
+		</div><!-- .container -->
+	</div><!--#header-->
 	
 	<div class="container">

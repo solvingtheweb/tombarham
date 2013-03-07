@@ -4,196 +4,142 @@
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class('page'); ?>>
 			<article>
-				
-	
-				<div class="post-content page-content">
-					<?php if ( is_page ('commercials') ) 
-					{
-						$commercials = new Pod('commercials');
-			          	$commercials->findRecords('t.commercialdisplayorder ASC', -1);
-			          	$totalslides = $commercials->getTotalRows();
-					?>
-						<?php if( $totalslides>0 ) : ?>
-						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
-							
-						           
-							<ul class="touchcarousel-container">
-								<?php while ( $commercials->fetchRecord() ) : ?>
-									<?php
-						              // set our variables
-							      		$commercial_id         = $commercials->get_field('id');
-						            	$commercial_name       = $commercials->get_field('name');
-						            	$commercial_image      = $commercials->get_field('image');
-										$commercial_vimeolink  = $commercials->get_field('vimeolink');
-
-						            	// data cleanup
-						            	$commercial_image     = $commercial_image[0]['guid'];
-						            ?>
-									<?php if( !empty( $commercial_image ) ) : ?>
-										<li class="touchcarousel-item">
-											<a class="item-block fancybox" title="<?php echo $commercial_name; ?>" href="<?php echo $commercial_image; ?>">
-										    	<img src="<?php echo $commercial_image; ?>"/>
-										    	<!--<h4><?php echo $commercial_name; ?></h4>-->  
-
-											</a>
-										</li>
-									<?php endif ?>
-									<?php if( !empty( $commercial_vimeolink ) ) : ?>
-										<li class="touchcarousel-item">
-											<a class="item-block iframe" title="<?php echo $commercial_name; ?>" href="http://player.vimeo.com/video/<?php echo $commercial_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
-									    		<img src="<?php echo getVimeoInfo($commercial_vimeolink) ?>"/>
-									    		<!--<h4><?php echo $commercial_name; ?></h4>--> 
-										
-											</a>
-										</li>
-									<?php endif ?> 
-								<?php endwhile; ?>
-							</ul> 
-						</div>
-						<?php endif; ?>
-					<?php }?>
-
-					<?php if ( is_page ('corporate') ) {
-						$corporate = new Pod('corporate');
-			          	$corporate->findRecords('t.corporatedisplayorder ASC', -1);
-			          	$totalslides = $corporate->getTotalRows();
-					?>
-					<?php if( $totalslides>0 ) : ?>
-						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
-							<ul class="touchcarousel-container">
-								<?php while ( $corporate->fetchRecord() ) : ?>
-									<?php
-						              // set our variables
-							      		$corporate_id         = $corporate->get_field('id');
-						            	$corporate_name       = $corporate->get_field('name');
-						            	$corporate_image      = $corporate->get_field('image');
-										$corporate_vimeolink  = $corporate->get_field('vimeolink');
-
-						            	// data cleanup
-						            	$corporate_image     = $corporate_image[0]['guid'];
-						            ?>
-
-								<?php if( !empty( $corporate_image ) ) : ?>
-									<li class="touchcarousel-item">
-										<a class="item-block fancybox" title="<?php echo $corporate_name; ?>" href="<?php echo $corporate_image; ?>">
-									    	<img src="<?php echo $corporate_image; ?>"/>
-									    	<!--<h4><?php echo $corporate_name; ?></h4>-->    
-										</a>
-									</li>
-								<?php endif ?>
-								<?php if( !empty( $corporate_vimeolink ) ) : ?>
-									<li class="touchcarousel-item">
-										<a class="item-block iframe" title="<?php echo $corporate_name; ?>" href="http://player.vimeo.com/video/<?php echo $corporate_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
-								    		<img src="<?php echo getVimeoInfo($corporate_vimeolink) ?>"/>
-								    		<!--<h4><?php echo $corporate_name; ?></h4>-->   
-									
-										</a>
-									</li>
-								<?php endif ?>
-								<?php endwhile; ?>
-								
-							</ul> 
-						</div>
-						<?php endif; ?>
-					<?php }?>
-
-					<?php if ( is_page ('titles') ) {
-						$titles = new Pod('titles');
-			          	$titles->findRecords('t.titlesdisplayorder ASC', -1);
-			          	$totalslides = $titles->getTotalRows();
-					?>
-					<?php if( $totalslides>0 ) : ?>
-						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
-							<ul class="touchcarousel-container">
-								<?php while ( $titles->fetchRecord() ) : ?>
-									<?php
-						              // set our variables
-							      		$title_id         = $titles->get_field('id');
-						            	$title_name       = $titles->get_field('name');
-						            	$title_image      = $titles->get_field('image');
-										$title_vimeolink  = $titles->get_field('vimeolink');
-
-						            	// data cleanup
-						            	$title_image     = $title_image[0]['guid'];
-						            ?>
-
-								<?php if( !empty( $title_image ) ) : ?>
-									<li class="touchcarousel-item">
-										<a class="item-block fancybox" title="<?php echo $title_name; ?>" href="<?php echo $title_image; ?>">
-									    	<img src="<?php echo $title_image; ?>"/>
-									    	<!--<h4><?php echo $title_name; ?></h4>-->    
-										</a>
-									</li>
-								<?php endif ?>
-								<?php if( !empty( $title_vimeolink ) ) : ?>
-									<li class="touchcarousel-item">
-										<a class="item-block iframe" title="<?php echo $title_name; ?>" href="http://player.vimeo.com/video/<?php echo $title_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
-								    		<img src="<?php echo getVimeoInfo($title_vimeolink) ?>"/>
-								    		<!--<h4><?php echo $title_name; ?></h4>-->   
-									
-										</a>
-									</li>
-								<?php endif ?>
-								<?php endwhile; ?>
-								
-							</ul> 
-						</div>
-						<?php endif; ?>
-					<?php }?>
-
-					<?php if ( is_page ('concept') ) {
-						$concept = new Pod('concept');
-			          	$concept->findRecords('t.conceptdisplayorder ASC', -1);
-			          	$totalslides = $concept->getTotalRows();
-					?>
-					<?php if( $totalslides>0 ) : ?>
-						<div id="concepts_container">
-						<div id="carousel-image-and-text" class="touchcarousel black-and-white">
-							<ul class="touchcarousel-container">
-								<?php while ( $concept->fetchRecord() ) : ?>
-									<?php
-						              // set our variables
-							      		$concept_id         = $concept->get_field('id');
-										$concept_slug       = $concept->get_field('slug');
-						            	$concept_name       = $concept->get_field('name');
-						            	$concept_image      = $concept->get_field('image');
-
-						            	// data cleanup
-						            	$concept_image     = $concept_image[0]['guid'];
-						            ?>
-
-								<?php if( !empty( $concept_image ) ) : ?>
-									<li class="touchcarousel-item">
-										<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_slug; ?>">
-									    	<img src="<?php echo $concept_image; ?>"/>
-									    	<!--<h4><?php echo $title_name; ?></h4>-->    
-										</a>
-									</li>
-								<?php endif ?>
-								<?php endwhile; ?>
-								
-							</ul> 
-						</div>
-						</div>
-						
-						<div id="ajax"></div>
-					<?php endif; ?>
-		
-					<?php }?>
-					
-					</div>
-					
-					
-					
-					<?php the_content(); ?>
-				</div><!--.post-content .page-content -->
+				<?php the_content(); ?>
 			</article>
-
-			
 		</div><!--#post-# .post-->
 
 
-	<?php endwhile; ?>
+<?php endwhile; ?>
+
+				<?php if ( is_page ('commercials') ) 
+				{
+					$commercials = new Pod('commercials');
+			      	$commercials->findRecords('t.commercialdisplayorder ASC', -1);
+			      	$totalslides = $commercials->getTotalRows();
+				?>
+					<?php if( $totalslides>0 ) : ?>
+
+					<div id="maincarousel" class="touchcarousel black-and-white">
+						
+					           
+						<ul class="touchcarousel-container">
+							<?php while ( $commercials->fetchRecord() ) : ?>
+								<?php
+					              // set our variables
+						      		$commercial_id         = $commercials->get_field('id');
+					            	$commercial_name       = $commercials->get_field('name');
+					            	$commercial_image      = $commercials->get_field('image');
+									$commercial_vimeolink  = $commercials->get_field('vimeolink');
+
+					            	// data cleanup
+					            	$commercial_image     = $commercial_image[0]['guid'];
+					            ?>
+								
+								<li class="touchcarousel-item">
+									<a class="item-block iframe" title="<?php echo $commercial_name; ?>" href="http://player.vimeo.com/video/<?php echo $commercial_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
+							    		
+							    		<?php if( !empty( $commercial_image ) ) : ?>
+							    			<img src="<?php echo $commercial_image; ?>"/>
+
+							    		<?php elseif( !empty( $commercial_vimeolink ) ) : ?>
+
+								    		<img class="vimeo_thumb" src="<?php echo getVimeoInfo($commercial_vimeolink) ?>"/>
+								    		<!--<h4><?php echo $commercial_name; ?></h4>--> 
+
+							    		<?php endif ?> 
+								
+									</a>
+								</li>
+
+							<?php endwhile; ?>
+						</ul> 
+					</div>
+					<?php endif; ?>
+				<?php }?>
+
+				
+
+				<?php if ( is_page ('titles') ) {
+					$titles = new Pod('titles');
+			      	$titles->findRecords('t.titlesdisplayorder ASC', -1);
+			      	$totalslides = $titles->getTotalRows();
+				?>
+				<?php if( $totalslides>0 ) : ?>
+					<div id="maincarousel" class="touchcarousel black-and-white">
+						<ul class="touchcarousel-container">
+							<?php while ( $titles->fetchRecord() ) : ?>
+								<?php
+					              // set our variables
+						      		$title_id         = $titles->get_field('id');
+					            	$title_name       = $titles->get_field('name');
+					            	$title_image      = $titles->get_field('image');
+									$title_vimeolink  = $titles->get_field('vimeolink');
+
+					            	// data cleanup
+					            	$title_image     = $title_image[0]['guid'];
+					            ?>
+
+					            <li class="touchcarousel-item">
+									<a class="item-block iframe" title="<?php echo $title_name; ?>" href="http://player.vimeo.com/video/<?php echo $title_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
+							    		
+							    		<?php if( !empty( $title_image ) ) : ?>
+							    			<img src="<?php echo $title_image; ?>" />
+
+							    		<?php elseif( !empty( $title_vimeolink ) ) : ?>
+
+								    		<img class="vimeo_thumb" src="<?php echo getVimeoInfo($title_vimeolink) ?>"/>
+								    		<!--<h4><?php echo $commercial_name; ?></h4>--> 
+
+							    		<?php endif ?> 
+								
+									</a>
+								</li>
+
+							<?php endwhile; ?>
+							
+						</ul> 
+					</div>
+					<?php endif; ?>
+				<?php }?>
+
+				<?php if ( is_page ('concept') ) {
+					$concept = new Pod('concept');
+			      	$concept->findRecords('t.conceptdisplayorder ASC', -1);
+			      	$totalslides = $concept->getTotalRows();
+				?>
+				<?php if( $totalslides>0 ) : ?>
+
+					<div id="maincarousel" class="touchcarousel black-and-white">
+						<ul class="touchcarousel-container">
+							<?php while ( $concept->fetchRecord() ) : ?>
+								<?php
+					              // set our variables
+						      		$concept_id         = $concept->get_field('id');
+									$concept_slug       = $concept->get_field('slug');
+					            	$concept_name       = $concept->get_field('name');
+					            	$concept_image      = $concept->get_field('image');
+
+					            	// data cleanup
+					            	$concept_image     = $concept_image[0]['guid'];
+					            ?>
+
+							<?php if( !empty( $concept_image ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_slug; ?>">
+								    	<img src="<?php echo $concept_image; ?>"/>
+								    	<!--<h4><?php echo $title_name; ?></h4>-->    
+									</a>
+								</li>
+							<?php endif ?>
+							<?php endwhile; ?>
+							
+						</ul> 
+					</div>
+					
+					<div id="ajax"></div>
+				<?php endif; ?>
+
+				<?php }?>
 
 </div><!--#content-->
 <div class="push"></div>
@@ -201,39 +147,37 @@
 <script type="text/javascript">
 
 jQuery(function($) {
-		$("#carousel-image-and-text").touchCarousel({					
-			pagingNav: false,
-			snapToItems: true,
-			itemsPerMove: 3,
+		$("#maincarousel").touchCarousel({					
 			transitionSpeed: 500,				
 			scrollToLast: false,
-			loopItems: false,
-			scrollbar: false,
+			loopItems: true,
+			scrollbar:false
 	    });
 });
 
+/*
 jQuery(document).ready(function(){
 	jQuery('#ajax').hide();
-	jQuery('#concepts_container #carousel-image-and-text a').live('click', function(e){  
+	jQuery('#maincarousel a').live('click', function(e){  
   		e.preventDefault();  
   		var link = jQuery(this).attr('href');
 		jQuery('#ajax').load(link+ ' #ajax', function(){
 			$("#subcarousel").touchCarousel({					
 				pagingNav: false,
 				snapToItems: true,
-				itemsPerMove: 3,
+				itemsPerMove: 1,
 				transitionSpeed: 500,				
-				scrollToLast: false,
-				loopItems: false,
+				scrollToLast: true,
+				loopItems: true,
 				scrollbar: false,
 		    });
 		});
   		jQuery('#ajax').show();
-  		jQuery('.touchcarousel-container').css("width", "1140px");
+  		jQuery('.touchcarousel-container');
 		
   	}); 
 
-});
+});*/
 
 
 

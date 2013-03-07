@@ -1,7 +1,6 @@
 <?php 
 /* Template Name: Concept Detail */
 get_header(); ?>
-	<div id="ajax">
 	
 		<?php
 			$found_concept = false;
@@ -52,107 +51,108 @@ get_header(); ?>
 			}	
 		?>
 			<?php if( $found_concept ) : ?>
-				<div id="concepts_container">
-				<div id="subcarousel" class="touchcarousel black-and-white">
-					<ul class="touchcarousel-container">
-						
-            
-						<?php if( !empty( $concept_image ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption; ?>" href="<?php echo $concept_image; ?>">
-							    	<img src="<?php echo $concept_image; ?>"/>
-            
-								</a>
-							</li>
+				<div class="carousel_container">
+					<h3><?php echo $concept_name; ?></h3>
+					<div id="subcarousel" class="touchcarousel black-and-white">
+						<ul class="touchcarousel-container">
 							
-						<?php endif ?>
-						<?php if( !empty( $concept_image2 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption2; ?>" href="<?php echo $concept_image2; ?>">
-							    	<img src="<?php echo $concept_image2; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image3 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption3; ?>" href="<?php echo $concept_image3; ?>">
-							    	<img src="<?php echo $concept_image3; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image4 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption4; ?>" href="<?php echo $concept_image4; ?>">
-							    	<img src="<?php echo $concept_image4; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image5 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption5; ?>" href="<?php echo $concept_image5; ?>">
-							    	<img src="<?php echo $concept_image5; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image6 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption6; ?>" href="<?php echo $concept_image6; ?>">
-							    	<img src="<?php echo $concept_image6; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image7 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption7; ?>" href="<?php echo $concept_image7; ?>">
-							    	<img src="<?php echo $concept_image7; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image8 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption8; ?>" href="<?php echo $concept_image8; ?>">
-							    	<img src="<?php echo $concept_image8; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image9 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption9; ?>" href="<?php echo $concept_image9; ?>">
-							    	<img src="<?php echo $concept_image9; ?>"/>
-            
-								</a>
-							</li>
-							
-						<?php endif ?>
-						<?php if( !empty( $concept_image10 ) ) : ?>
-							<li class="touchcarousel-item">
-								<a class="item-block fancybox" title="<?php echo $concept_caption10; ?>" href="<?php echo $concept_image10; ?>">
-							    	<img src="<?php echo $concept_image10; ?>"/>
-            
-								</a>
-							</li>
-						<?php endif ?>
-            
-					</ul> 
-				</div>
+	            
+							<?php if( !empty( $concept_image ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption; ?>" href="<?php echo $concept_image; ?>">
+								    	<img src="<?php echo $concept_image; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image2 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption2; ?>" href="<?php echo $concept_image2; ?>">
+								    	<img src="<?php echo $concept_image2; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image3 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption3; ?>" href="<?php echo $concept_image3; ?>">
+								    	<img src="<?php echo $concept_image3; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image4 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption4; ?>" href="<?php echo $concept_image4; ?>">
+								    	<img src="<?php echo $concept_image4; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image5 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption5; ?>" href="<?php echo $concept_image5; ?>">
+								    	<img src="<?php echo $concept_image5; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image6 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption6; ?>" href="<?php echo $concept_image6; ?>">
+								    	<img src="<?php echo $concept_image6; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image7 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption7; ?>" href="<?php echo $concept_image7; ?>">
+								    	<img src="<?php echo $concept_image7; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image8 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption8; ?>" href="<?php echo $concept_image8; ?>">
+								    	<img src="<?php echo $concept_image8; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image9 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption9; ?>" href="<?php echo $concept_image9; ?>">
+								    	<img src="<?php echo $concept_image9; ?>"/>
+	            
+									</a>
+								</li>
+								
+							<?php endif ?>
+							<?php if( !empty( $concept_image10 ) ) : ?>
+								<li class="touchcarousel-item">
+									<a class="item-block fancybox" title="<?php echo $concept_caption10; ?>" href="<?php echo $concept_image10; ?>">
+								    	<img src="<?php echo $concept_image10; ?>"/>
+	            
+									</a>
+								</li>
+							<?php endif ?>
+	            
+						</ul> 
+					</div>
+					<p><a href="<?php echo get_permalink(26); ?>">Back to Concepts</a></p>
 				</div>
 			<?php endif; ?>
 		
-	</div>
 
 	<script type="text/javascript">
 	jQuery(document).ready(function(){
@@ -167,6 +167,24 @@ get_header(); ?>
 	    });
 
 	  });
+
+
+	/* Fancy Box Initialization */
+
+    $(document).ready(function() {
+        $('.fancybox').fancybox({
+            
+        });
+    });
+
+	$('.iframe').fancybox({
+		'padding' : 10,
+		'type' : 'iframe',
+		'width' : 560,
+		'height' : 340
+		
+	});
+   
 	</script>
 	
 <?php get_footer(); ?>
