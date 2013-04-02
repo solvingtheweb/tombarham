@@ -52,7 +52,7 @@ get_header(); ?>
 		?>
 			<?php if( $found_concept ) : ?>
 				<div class="carousel_container">
-					<h3><?php echo $concept_name; ?></h3>
+					<h3><?php echo $concept_name; ?></h3><p><a href="<?php echo get_permalink(26); ?>">Back to Concepts</a></p>
 					<div id="subcarousel" class="touchcarousel black-and-white">
 						<ul class="touchcarousel-container">
 							
@@ -149,7 +149,6 @@ get_header(); ?>
 	            
 						</ul> 
 					</div>
-					<p><a href="<?php echo get_permalink(26); ?>">Back to Concepts</a></p>
 				</div>
 			<?php endif; ?>
 		
@@ -159,7 +158,7 @@ get_header(); ?>
 		$("#subcarousel").touchCarousel({					
 			pagingNav: false,
 			snapToItems: true,
-			itemsPerMove: 1,
+			itemsPerMove: 2,
 			transitionSpeed: 500,				
 			scrollToLast: false,
 			loopItems: true,

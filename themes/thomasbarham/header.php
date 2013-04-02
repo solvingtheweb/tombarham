@@ -25,7 +25,7 @@
 	
 	<!-- Carousel Styles -->
 	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/touchcarousel.css" />
-	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/touchcarousel/black-and-white-skin/black-and-white-skin.css" />
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/touchcarousel/tb-skin/tb-skin.css" />
 	<script src="<?php bloginfo( 'template_url' ); ?>/js/jquery-1.7.1.js"></script>	
 	<script src="<?php bloginfo( 'template_url' ); ?>/js/touchcarousel/jquery.touchcarousel-1.2.min.js"></script>
 	

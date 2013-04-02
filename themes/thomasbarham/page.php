@@ -147,7 +147,8 @@
 <script type="text/javascript">
 
 jQuery(function($) {
-		$("#maincarousel").touchCarousel({					
+		$("#maincarousel").touchCarousel({
+			itemsPerMove: 2,				
 			transitionSpeed: 500,				
 			scrollToLast: false,
 			loopItems: true,
