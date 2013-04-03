@@ -9,7 +9,70 @@ Author URI: http://www.solvingtheweb.com
 */
 
 
+/* Adds Home Pod to Wordpress Menu */
 
+function pods_ui_homemenu()
+{
+  $icon = WP_PLUGIN_URL. '/TB CMS UI/gear.png';
+  add_object_page('home', 'Home', 'read', 'homemenu', '', $icon);
+  add_submenu_page('homemenu', ' Videos', 'Videos', 'read', 'homemenu', 'homevideos');
+  add_submenu_page('homemenu', ' Reorder', 'Reorder', 'read', 'reorderhome', 'reorderhome');
+}
+
+function homevideos()
+{
+  $object = new Pod('Home');
+  $add_fields = $edit_fields = array(
+                    'name',
+                    'slug',
+                    'vimeolink',
+                    'image'
+           );
+  $object->ui = array(
+                    'title'   => 'Home (Videos)',
+                    'columns' => array(
+                              'name'      => 'Name',
+                              'created'   => 'Date Created',
+                              'modified'  => 'Last Modified'
+                              ),
+          'where'     => "t.vimeolink",
+                    'add_fields'  => $add_fields,
+                    'edit_fields' => $edit_fields
+          );
+  pods_ui_manage($object);
+}
+
+function reorderhome()
+{
+  $object = new Pod('home');
+  $add_fields = $edit_fields = array(
+                    'name'
+           );
+  $object->ui = array(
+                    'title'   => 'Reorder Home',
+          'reorder' => 'homedisplayorder',
+          'reorder_columns' => array(
+                    'name'      => 'Name',
+                'created'   => 'Date Created',
+                              'modified'  => 'Last Modified'
+          ),
+          'sort'    => 't.homedisplayorder ASC',
+                    'columns' => array(
+                              'name'      => 'Name',
+                              'created'   => 'Date Created',
+                              'modified'  => 'Last Modified'
+                              ),
+                    'add_fields'  => $add_fields,
+                    'edit_fields' => $edit_fields,
+          'disable_actions' => array( 'add', 'duplicate', 'delete')
+          );
+  pods_ui_manage($object);
+}
+
+add_action('admin_menu','pods_ui_homemenu');
+
+
+/* Adds Commercials Pod to Wordpress Menu */
 
 function pods_ui_commercialsmenu()
 {

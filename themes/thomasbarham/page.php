@@ -10,6 +10,51 @@
 
 
 <?php endwhile; ?>
+				<?php if ( is_page ('home') ) 
+				{
+					$home = new Pod('home');
+			      	$home->findRecords('t.homedisplayorder ASC', -1);
+			      	$totalslides = $home->getTotalRows();
+				?>
+					<?php if( $totalslides>0 ) : ?>
+
+					<div id="maincarousel" class="touchcarousel black-and-white">
+						
+					           
+						<ul class="touchcarousel-container">
+							<?php while ( $home->fetchRecord() ) : ?>
+								<?php
+					              // set our variables
+						      		$home_id         = $home->get_field('id');
+					            	$home_name       = $home->get_field('name');
+					            	$home_image      = $home->get_field('image');
+									$home_vimeolink  = $home->get_field('vimeolink');
+
+					            	// data cleanup
+					            	$home_image     = $home_image[0]['guid'];
+					            ?>
+								
+								<li class="touchcarousel-item">
+									<a class="item-block iframe" title="<?php echo $home_name; ?>" href="http://player.vimeo.com/video/<?php echo $home_vimeolink; ?>?title=0&amp;byline=0&amp;portrait=0">
+							    		
+							    		<?php if( !empty( $home_image ) ) : ?>
+							    			<img src="<?php echo $home_image; ?>"/>
+
+							    		<?php elseif( !empty( $home_vimeolink ) ) : ?>
+
+								    		<img class="vimeo_thumb" src="<?php echo getVimeoInfo($home_vimeolink) ?>"/>
+								    		<!--<h4><?php echo $home_name; ?></h4>--> 
+
+							    		<?php endif ?> 
+								
+									</a>
+								</li>
+
+							<?php endwhile; ?>
+						</ul> 
+					</div>
+					<?php endif; ?>
+				<?php }?>
 
 				<?php if ( is_page ('commercials') ) 
 				{
