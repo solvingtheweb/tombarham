@@ -58,16 +58,16 @@ get_header(); ?>
 					$concept_image8     = $concept_image8[0]['guid'];
 					$concept_image9     = $concept_image9[0]['guid'];
 					$concept_image10    = $concept_image10[0]['guid'];
-					$concept_image_thumb   = wp_get_attachment_image_src($concept_image_ID,'medium');
-					$concept_image2_thumb  = wp_get_attachment_image_src($concept_image2_ID,'medium');
-					$concept_image3_thumb  = wp_get_attachment_image_src($concept_image3_ID,'medium');
-					$concept_image4_thumb  = wp_get_attachment_image_src($concept_image4_ID,'medium');
-					$concept_image5_thumb  = wp_get_attachment_image_src($concept_image5_ID,'medium');
-					$concept_image6_thumb  = wp_get_attachment_image_src($concept_image6_ID,'medium');
-					$concept_image7_thumb  = wp_get_attachment_image_src($concept_image7_ID,'medium');
-					$concept_image8_thumb  = wp_get_attachment_image_src($concept_image8_ID,'medium');
-					$concept_image9_thumb  = wp_get_attachment_image_src($concept_image9_ID,'medium');
-					$concept_image10_thumb = wp_get_attachment_image_src($concept_image10_ID,'medium');
+					$concept_image_thumb   = wp_get_attachment_image_src($concept_image_ID,'thumbnail');
+					$concept_image2_thumb  = wp_get_attachment_image_src($concept_image2_ID,'thumbnail');
+					$concept_image3_thumb  = wp_get_attachment_image_src($concept_image3_ID,'thumbnail');
+					$concept_image4_thumb  = wp_get_attachment_image_src($concept_image4_ID,'thumbnail');
+					$concept_image5_thumb  = wp_get_attachment_image_src($concept_image5_ID,'thumbnail');
+					$concept_image6_thumb  = wp_get_attachment_image_src($concept_image6_ID,'thumbnail');
+					$concept_image7_thumb  = wp_get_attachment_image_src($concept_image7_ID,'thumbnail');
+					$concept_image8_thumb  = wp_get_attachment_image_src($concept_image8_ID,'thumbnail');
+					$concept_image9_thumb  = wp_get_attachment_image_src($concept_image9_ID,'thumbnail');
+					$concept_image10_thumb = wp_get_attachment_image_src($concept_image10_ID,'thumbnail');
 			}	
 		?>
 			<?php if( $found_concept ) : ?>

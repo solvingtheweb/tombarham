@@ -163,7 +163,7 @@
 									$concept_slug       = $concept->get_field('slug');
 					            	$concept_name       = $concept->get_field('name');
 									$concept_image_ID   = $concept->get_field('image.ID');
-									$concept_image_thumb = wp_get_attachment_image_src($concept_image_ID,'large');
+									$concept_image_thumb = wp_get_attachment_image_src($concept_image_ID,'thumbnail');
 					            	$concept_image      = $concept->get_field('image');
 
 					            	// data cleanup
