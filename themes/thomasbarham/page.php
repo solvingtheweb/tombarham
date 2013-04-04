@@ -162,6 +162,8 @@
 						      		$concept_id         = $concept->get_field('id');
 									$concept_slug       = $concept->get_field('slug');
 					            	$concept_name       = $concept->get_field('name');
+									$concept_image_ID   = $concept->get_field('image.ID');
+									$concept_image_thumb = wp_get_attachment_image_src($concept_image_ID,'large');
 					            	$concept_image      = $concept->get_field('image');
 
 					            	// data cleanup
@@ -171,7 +173,7 @@
 							<?php if( !empty( $concept_image ) ) : ?>
 								<li class="touchcarousel-item">
 									<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_slug; ?>">
-								    	<img src="<?php echo $concept_image; ?>"/>
+								    	<img src="<?php echo $concept_image_thumb[0]; ?>"/>
 								    	<!--<h4><?php echo $title_name; ?></h4>-->    
 									</a>
 								</li>
