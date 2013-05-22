@@ -147,44 +147,20 @@
 					<?php endif; ?>
 				<?php }?>
 
-				<?php if ( is_page ('concept') ) {
-					$concept = new Pod('concept');
-			      	$concept->findRecords('t.conceptdisplayorder ASC', -1);
-			      	$totalslides = $concept->getTotalRows();
-				?>
-				<?php if( $totalslides>0 ) : ?>
-
+				<?php if ( is_page ('concept') ) { ?>
+				
 					<div id="maincarousel" class="touchcarousel black-and-white">
 						<ul class="touchcarousel-container">
-							<?php while ( $concept->fetchRecord() ) : ?>
-								<?php
-					              // set our variables
-						      		$concept_id         = $concept->get_field('id');
-									$concept_slug       = $concept->get_field('slug');
-					            	$concept_name       = $concept->get_field('name');
-									$concept_image_ID   = $concept->get_field('image.ID');
-									$concept_image_thumb = wp_get_attachment_image_src($concept_image_ID,'thumbnail');
-					            	$concept_image      = $concept->get_field('image');
-
-					            	// data cleanup
-					            	$concept_image     = $concept_image[0]['guid'];
-					            ?>
-
-							<?php if( !empty( $concept_image ) ) : ?>
+							<?php $loop = new WP_Query( array( 'post_type' => 'concepts', 'order' => 'ASC' ) ); ?>
+							<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<li class="touchcarousel-item">
-									<a class="item-block" title="<?php echo $concept_name; ?>" href="<?php echo $concept_slug; ?>">
-								    	<img src="<?php echo $concept_image_thumb[0]; ?>"/>
-								    	<!--<h4><?php echo $title_name; ?></h4>-->    
+									<a class="item-block" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+								    	<img src="<?php the_field('concept_gallery_thumbnail'); ?>"/>
 									</a>
 								</li>
-							<?php endif ?>
 							<?php endwhile; ?>
-							
 						</ul> 
 					</div>
-					
-					<div id="ajax"></div>
-				<?php endif; ?>
 
 				<?php }?>
 
