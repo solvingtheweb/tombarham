@@ -262,14 +262,14 @@ Carousels
 	margin: 0 auto;
 }	
 #subcarousel .arrow-holder {
-	height: 200px;
+	height: 165px;
 }		
 #subcarousel .touchcarousel-item {	
-	height: 200px;		
+	height: 165px;		
 }
 #subcarousel .item-block {
-	width: 300px;
-	height: 200px;
+	width: 293px;
+	height: 165px;
 	display: block;
 }
 #subcarousel .item-block img,

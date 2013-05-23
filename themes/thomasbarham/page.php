@@ -147,7 +147,7 @@
 					<?php endif; ?>
 				<?php }?>
 
-				<?php if ( is_page ('concept') ) { ?>
+				<?php if ( is_page ('concepts') ) { ?>
 				
 					<div id="maincarousel" class="touchcarousel black-and-white">
 						<ul class="touchcarousel-container">
